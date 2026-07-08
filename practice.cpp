@@ -3,19 +3,19 @@ using namespace std;
 
 //--------------------------------------------------------reverse the number
 
-int main(){
-    int n=10289;
-    int sum = 0;
-    int i;
+// int main(){
+//     int n=10289;
+//     int sum = 0;
+//     int i;
 
-    while(n>0){
-        i = n%10;
-        sum =  sum*10 + i;
-        n = n/10;
-    }
-    cout<<sum;
-    return 0;
-}
+//     while(n>0){
+//         i = n%10;
+//         sum =  sum*10 + i;
+//         n = n/10;
+//     }
+//     cout<<sum;
+//     return 0;
+// }
 
 //--------------------------------------------------------print triangle of 01
 
@@ -63,3 +63,25 @@ int main(){
 //         cout<<endl;
 //     }
 // }
+
+//--------------------------------------------------------dec to binary
+
+#include<iostream>
+using namespace std;
+
+void dectobin(int x){
+    int pow = 1;
+    int binNum = 0;
+    while(x>0){
+        int rem = x%2;
+        binNum += rem*pow;
+        pow = pow*10;
+        x = x/2;
+
+    }
+    cout<<binNum;
+}
+
+int main(){
+    dectobin(9);
+}
