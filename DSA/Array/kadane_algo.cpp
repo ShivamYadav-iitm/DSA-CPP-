@@ -9,7 +9,6 @@ void maxsubarraysum(int *arr, int n) {
     for(int i = 0; i < n; i++) {
         currSum += arr[i];
         
-        // Update maxSum BEFORE resetting currSum to 0
         maxSum = max(maxSum, currSum);
         
         if(currSum < 0) {
