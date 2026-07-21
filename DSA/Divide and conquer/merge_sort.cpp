@@ -30,10 +30,10 @@ void merge(int arr[],int si,int ei,int mid){
 }
 
 void mergesort(int arr[],int si,int ei){
-    if(si>=ei){
+    if(si>=ei){  //base case
         return;
     }
-    int mid = si + (ei - si) /2;
+    int mid = si + (ei - si) /2; //eqv to (si+ei)/2
 
     mergesort(arr,si,mid); //left 
     mergesort(arr,mid+1,ei); //right 
