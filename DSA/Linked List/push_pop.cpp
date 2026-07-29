@@ -85,6 +85,15 @@ class List{
             temp->next = newnode;
 
         }
+
+        void pop_front(){
+            Node * temp = head;
+            head = head->next;
+            temp->next = NULL;
+            delete temp;
+        }
+
+        
         
 };
 
@@ -98,5 +107,8 @@ int main(){
     ll.push_back(5);
     ll.insert(100,2);
     ll.printlist();
+    ll.pop_front();
+    ll.printlist();
+
 
 }
