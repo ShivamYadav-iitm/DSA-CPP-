@@ -118,6 +118,28 @@ class List{
             }
             return -1;
         }
+
+        int helper(Node * temp,int key){
+            if(temp == NULL){
+                return -1;
+            }
+            if(temp->Data == key){
+                return 0;
+            }
+            else{
+                int idx = helper(temp->next,key);
+                if(idx==-1){
+                    return -1;
+                }
+                else{
+                    return idx+1;
+                }
+            }
+        }
+
+        int searchrec(int key){
+            return helper(head,key);
+        }
         
 };
 
@@ -130,6 +152,7 @@ int main(){
     ll.push_back(5);
     ll.insert(100,2);
     ll.printlist();
-    cout<<ll.search(100)<<endl;
+    // cout<<ll.search(100)<<endl;
+    cout<<ll.searchrec(2)<<endl;
     return 0;
 }
