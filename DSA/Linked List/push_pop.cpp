@@ -101,8 +101,22 @@ class List{
             //now temp is pointing to prev of tail
             temp->next = NULL;
             delete tail;
-            tail=temp;
-            
+            tail=temp; 
+        }
+
+        int search(int key){ //TC = O{n}
+            int pos =0;
+            Node * temp =head;
+            while(temp != NULL){
+                if(temp->Data == key){
+                    return pos;
+                }
+                else{
+                    temp = temp -> next;
+                    pos = pos+1;
+                }
+            }
+            return -1;
         }
         
 };
@@ -112,15 +126,10 @@ int main(){
     ll.push_front(3);
     ll.push_front(2);
     ll.push_front(1);
-    ll.printlist();
     ll.push_back(4);
     ll.push_back(5);
     ll.insert(100,2);
     ll.printlist();
-    ll.pop_front();
-    ll.printlist();
-    ll.pop_back();
-    ll.printlist();
-
-
+    cout<<ll.search(100)<<endl;
+    return 0;
 }
