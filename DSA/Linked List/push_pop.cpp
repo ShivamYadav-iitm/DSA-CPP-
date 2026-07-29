@@ -50,6 +50,23 @@ class List{
             }
             cout<<"NULL"<<endl;
         }
+
+        void insert(int val,int pos){
+            Node * newnode = new Node(val);
+            Node * temp = head;
+            for(int i=0;i<pos-1;i++){
+                if(temp == NULL){
+                    cout<<"INVALID INDEX"<<endl;
+                    return;
+                }
+                temp = temp->next;
+            }
+
+            //now temp points to pos-1 node
+            newnode->next = temp->next;
+            temp->next = newnode;
+
+        }
         
 };
 
@@ -61,6 +78,7 @@ int main(){
     ll.printlist();
     ll.push_back(4);
     ll.push_back(5);
+    ll.insert(100,2);
     ll.printlist();
 
 }
