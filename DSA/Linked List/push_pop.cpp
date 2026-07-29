@@ -93,7 +93,17 @@ class List{
             delete temp;
         }
 
-        
+        void pop_back(){
+            Node * temp = head;
+            while(temp->next != tail){
+                temp = temp->next;
+            }
+            //now temp is pointing to prev of tail
+            temp->next = NULL;
+            delete tail;
+            tail=temp;
+            
+        }
         
 };
 
@@ -108,6 +118,8 @@ int main(){
     ll.insert(100,2);
     ll.printlist();
     ll.pop_front();
+    ll.printlist();
+    ll.pop_back();
     ll.printlist();
 
 
