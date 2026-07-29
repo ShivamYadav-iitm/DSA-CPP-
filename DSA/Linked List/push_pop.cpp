@@ -140,6 +140,42 @@ class List{
         int searchrec(int key){
             return helper(head,key);
         }
+
+        void reverse(){
+            Node * curr = head;
+            Node * prev = NULL;
+
+            while(curr!=NULL){
+                Node * next = curr->next;
+                curr->next = prev;
+                //updation for next iteration
+                prev = curr;
+                curr =  next;
+            }
+            prev = head;
+        }
+
+        int getSize(){
+            int size = 0;
+            Node* temp = head;
+            while(temp != NULL){
+                temp = temp->next;
+                size++;
+            }
+            return size;
+        }
+
+        void removeNthFromEnd(int n) {
+        
+        int size = getSize();
+
+        Node * prev = head;
+        for(int i=1;i<(size-n);i++){
+            prev=prev->next;
+        }
+        //now prev is prev of nth from last
+        prev->next = prev->next->next;
+    }
         
 };
 
@@ -152,7 +188,7 @@ int main(){
     ll.push_back(5);
     ll.insert(100,2);
     ll.printlist();
-    // cout<<ll.search(100)<<endl;
-    cout<<ll.searchrec(2)<<endl;
+    ll.removeNthFromEnd(2);
+    ll.printlist();
     return 0;
 }
