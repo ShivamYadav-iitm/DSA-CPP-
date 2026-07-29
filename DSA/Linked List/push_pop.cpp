@@ -9,6 +9,15 @@ class Node{
             Data = val;
             next = NULL;
         }
+        
+        //for deleting the node from the memory
+        ~Node(){
+            cout<<"~Node"<<Data<<endl;
+            if(next != NULL){
+                delete next;
+                next = NULL;
+            }
+        }
 };
 
 class List{
@@ -18,6 +27,15 @@ class List{
         List(){
             head = NULL;
             tail = NULL;
+        }
+
+
+        //for deleting the linked list from the memory
+        ~List(){
+            cout<<"~List"<<endl;
+            if(head != NULL){
+                delete head;
+            }
         }
 
         void push_front(int val){
