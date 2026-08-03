@@ -52,8 +52,6 @@ public:
                 dp[i][j] = max(pickLeft, pickRight);
             }
         }
-        
-       
         return dp[0][n - 1] > 0;
     }
 };
