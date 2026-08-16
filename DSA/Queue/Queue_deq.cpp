@@ -21,7 +21,7 @@ public:
     }
 };
 
-int main(){
+int main(){ 
     Queue q;
     q.push(1);
     q.push(2);
