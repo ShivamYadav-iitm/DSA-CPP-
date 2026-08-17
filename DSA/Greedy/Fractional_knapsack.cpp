@@ -6,7 +6,7 @@ using namespace std;
 bool compare(pair<double,int>p1,pair<double,int>p2){
     return p1.first>p2.first; //descending order
 }
-int MaxVal(vector<int>val , vector<int>wt , int w){
+int MaxVal(vector<int>val , vector<int>wt , int w){  //O{nlogn}
     int n = val.size();
     vector<pair<double,int>>ratio(n,make_pair(0.0,0));
     for(int i=0;i<n;i++){
@@ -16,7 +16,7 @@ int MaxVal(vector<int>val , vector<int>wt , int w){
 
     sort(ratio.begin(),ratio.end(),compare);
     int ans = 0;
-    for(int i=0;i<n;i++){
+    for(int i=0;i<n;i++){ 
         int idx = ratio[i].second;
         if(wt[idx]<=w){
             ans+=val[idx];
