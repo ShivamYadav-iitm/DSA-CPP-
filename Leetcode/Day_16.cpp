@@ -20,4 +20,4 @@ public:
             return std::abs(cnt[1] - cnt[2]) > 2;
         }
     }
-};
+};  
