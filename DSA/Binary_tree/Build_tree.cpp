@@ -37,7 +37,7 @@ void preorder(Node *root){ //O{n}
     preorder(root->right);
 }
 
-void inorder(Node*root){
+void inorder(Node*root){ //O{n}
     if(root==NULL){
         return;
     }
