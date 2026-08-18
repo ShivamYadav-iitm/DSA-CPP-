@@ -2,7 +2,7 @@
 #include<vector>
 using namespace std;
 
-class Node{
+class Node{ 
 public:
     int data;
     Node * left;
@@ -16,7 +16,7 @@ public:
 
 static int idx = -1;
 
-Node * Build(vector<int> nodes){
+Node * Build(vector<int> nodes){  //O{n}
     idx++;
     if(nodes[idx]==-1){
         return NULL;
@@ -28,9 +28,19 @@ Node * Build(vector<int> nodes){
     return currNode;
 }
 
+void preorder(Node *root){ //O{n}
+    if(root==NULL){
+        return;
+    }
+    cout<<root->data<<" ";
+    preorder(root->left);
+    preorder(root->right);
+}
+
 int main(){
     vector<int> nodes = {1,2,4,-1,-1,5,-1,-1,3,-1,6,-1,-1};
     Node * root = Build(nodes);
     cout<<"Root of the tree is "<<root->data<<"\n";
+    preorder(root);
     return 0;
 }
