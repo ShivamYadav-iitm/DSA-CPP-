@@ -1,5 +1,6 @@
 #include<iostream>
 #include<vector>
+#include<queue>
 using namespace std;
 
 class Node{ 
@@ -26,6 +27,29 @@ Node * Build(vector<int> nodes){  //O{n}
     currNode->right = Build(nodes);
 
     return currNode;
+}
+
+void level(Node* root){   //level order traversal //O{n} , O{n}   
+    if(root == NULL){
+        return;
+    }
+    queue<Node*> q;
+    q.push(root);
+    while(!q.empty()){
+        Node * curr = q.front();
+        q.pop();
+        cout<<curr->data<<endl;
+
+        if(curr->left != NULL){
+            q.push(curr->left);
+        }
+
+        if(curr->right != NULL){
+            q.push(curr->right);
+        }
+        
+    }
+
 }
 
 void preorder(Node *root){ //O{n}
@@ -61,6 +85,7 @@ int main(){
     cout<<"Root of the tree is "<<root->data<<"\n";
     // preorder(root);
     //inorder(root);
-    postorder(root);
+    // postorder(root);
+    level(root);  //level order traversal
     return 0;
 }
