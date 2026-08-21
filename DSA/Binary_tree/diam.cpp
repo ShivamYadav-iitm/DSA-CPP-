@@ -41,11 +41,11 @@ int height(Node* root){
     return curr_h;
 }
 
-int diam1(Node* root){
+int diam1(Node* root){  //O{n^2}
     if(root == NULL){
         return 0;
     }
-    int currdiam = height(root->left) + height(root->right) + 1;
+    int currdiam = height(root->left) + height(root->right) + 1; //O{n}
     int leftdiam = diam1(root->left);
     int rightdiam = diam1(root->right);
 
@@ -53,10 +53,25 @@ int diam1(Node* root){
 
 }
 
+pair<int , int> diam2(Node* root){ // (diam,height)
+    if(root ==NULL){
+        return make_pair(0,0);
+    }
+    //(diam,height)
+    pair<int, int> Leftinfo = diam2(root->left);
+    pair<int,int> rightinfo = diam2(root->right);
+    
+    int currDiam = Leftinfo.second + rightinfo.second + 1;
+    int finaldiam = max(currDiam , max(Leftinfo.first , rightinfo.first));
+    int finalheight = max(Leftinfo.second , rightinfo.second) + 1;
+
+    return make_pair(finaldiam ,finalheight);
+}
+
 int main(){
     vector<int> nodes = {1,2,4,-1,-1,5,-1,-1,3,-1,6,-1,-1};
     Node * root = Build(nodes);
-    cout<<"Diameter of tree is: " <<diam1(root)<< endl;
+    cout<<"Diameter of tree is: "<<diam2(root).first<< endl;
     cout<<"Root of the tree is "<<root->data<<"\n";
     return 0;
 }
