@@ -18,8 +18,9 @@ public:
                 sum1 += (num[i] - '0');
             }
         }
+
+
         
-     
         for (int i = n / 2; i < n; i++) {
             if (num[i] == '?') {
                 q2++;
