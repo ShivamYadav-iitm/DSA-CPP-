@@ -27,5 +27,7 @@ public:
         int deleteBothEnds = (left + 1) + (n - right);
         
         return min({deleteFront, deleteBack, deleteBothEnds});
+
+        
     }
 };
