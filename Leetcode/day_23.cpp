@@ -7,8 +7,11 @@ class Solution {
 public:
     bool sumGame(string num) {
         double sum1 = 0, sum2 = 0;
+        
         double q1 = 0, q2 = 0;
+
         int n = num.length();
+
         
    
         for (int i = 0; i < n / 2; i++) {
@@ -16,6 +19,7 @@ public:
                 q1++;
             } else {
                 sum1 += (num[i] - '0');
+
             }
         }
 
@@ -26,6 +30,7 @@ public:
                 q2++;
             } else {
                 sum2 += (num[i] - '0');
+
             }
         }
 
