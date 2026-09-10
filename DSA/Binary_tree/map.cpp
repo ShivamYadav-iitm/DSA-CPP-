@@ -14,6 +14,8 @@ int main(){
     cout<<m.count(105)<<endl; // gives if key is present or not 
 
     for(auto it:m){
+        
         cout<<"key = " << it.first << ", value = "<<it.second<<endl;
     }
+
 }
