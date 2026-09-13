@@ -28,6 +28,7 @@ public:
     int averageOfSubtree(TreeNode* root) {
         int count_l = 0;
         if(root== NULL){
+            
             return 0;
         }
 
