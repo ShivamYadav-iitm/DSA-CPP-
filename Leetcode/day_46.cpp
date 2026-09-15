@@ -18,3 +18,5 @@ public:
         return !(isLeft || isRight || isBelow || isAbove);
     }
 };
+
+
