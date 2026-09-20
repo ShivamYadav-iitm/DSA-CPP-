@@ -34,9 +34,9 @@ Node * Build(vector<int> nodes){  //O{n}
 void topview(Node* root){
     queue<pair<Node*,int>> Q;
     map<int,int>m;
-
-
+    
     Q.push(make_pair(root,0));
+
     while(!Q.empty()){
         pair<Node*,int>curr = Q.front();
         Q.pop();
