@@ -50,7 +50,7 @@ Node* LCA(Node* root,int n1 ,int n2){ //O{n} O{1}
     return left == NULL ? right:left;
 }
 
-int dist(Node* root,int n){
+int dist(Node* root,int n){ //(N)
     if(root==NULL){
         return -1;
     }
@@ -72,7 +72,7 @@ int dist(Node* root,int n){
     return -1;
 }
 
-int mindist(Node* root,int n1,int n2){
+int mindist(Node* root,int n1,int n2){ //O(N)
     Node * lca = LCA(root,n1,n2);
 
     int dist1 = dist(lca,n1);
