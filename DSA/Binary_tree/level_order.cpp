@@ -29,6 +29,7 @@ Node * Build(vector<int> nodes){  //O{n}
     return currNode;
 }
 
+
 void level(Node* root){ //O{n} , O{n}
     if(root == NULL){
         return;
@@ -51,6 +52,7 @@ void level(Node* root){ //O{n} , O{n}
     }
 
 }
+
 
 void level2(Node* root){ //O{n} , O{n}
     if(root == NULL){
@@ -85,8 +87,8 @@ void level2(Node* root){ //O{n} , O{n}
             }
         
     }
-
 }
+
 
 int main(){
     vector<int> nodes = {1,2,4,-1,-1,5,-1,-1,3,-1,6,-1,-1};
