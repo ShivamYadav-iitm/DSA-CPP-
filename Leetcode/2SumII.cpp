@@ -3,6 +3,7 @@
 #include<algorithm>
 #include<climits>
 #include<string>
+
 using namespace std;
 
 class Solution {
@@ -18,6 +19,7 @@ public:
             ans.push_back(start+1);
             ans.push_back(end+1);
             return ans;
+
         }
         else if(Currsum > target){
             end --;
@@ -26,6 +28,7 @@ public:
             start ++;
         }
     }
+
     return ans;
 }
 };
