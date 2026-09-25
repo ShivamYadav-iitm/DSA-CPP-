@@ -64,7 +64,7 @@ bool searchBST(Node* root, int val) {
 int main(){
     int arr[9] = {8,5,3,1,6,4,10,11,14};
     Node * root = BuildBST(arr,6);
-    cout<<searchBST(root,4);
-    cout<<endl;
+    cout<<searchBST(root,4); //O{height}  avg case = O{logn}
+     cout<<endl;
     return 0;
 }
