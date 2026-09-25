@@ -41,7 +41,7 @@ Node * BuildBST(int arr[],int size){
     return root;
 }
 
-Node* inorder(Node*root){
+void inorder(Node*root){
     if(root == NULL){
         return; 
     }
