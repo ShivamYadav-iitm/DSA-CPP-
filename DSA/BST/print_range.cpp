@@ -68,7 +68,6 @@ void printInrange(Node* root,int start,int end){
 
 int main(){
     int arr[9] = {8,5,3,1,4,6,10,11,14};
-
     Node * root = BuildBST(arr,9);
     inorder(root);
     cout<<endl;
