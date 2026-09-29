@@ -66,10 +66,11 @@ int main(){
     heap.push(10);
     heap.push(100);
 
-    cout<<"top = "<<heap.top()<<endl;
-
-    heap.pop();
-    cout<<"top = "<<heap.top()<<endl;
+    // cout<<"top = "<<heap.top()<<endl;
+    while(!heap.empty()){
+        cout<<"top = "<<heap.top()<<endl;
+        heap.pop();
+    }
     return 0;
 
 }
