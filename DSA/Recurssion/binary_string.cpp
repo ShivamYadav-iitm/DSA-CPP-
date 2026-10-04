@@ -31,8 +31,6 @@ void binstr(string ans,int n){
 
 
 int main(){
-    string ans = "";
-    // binstr(ans,6);
-    
+    string ans = "";    
     return 0;
 }
