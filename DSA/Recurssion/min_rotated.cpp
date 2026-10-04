@@ -10,7 +10,7 @@ public:
     }
 private:
     int search(vector<int> &nums,int si,int ei){
-        if(si==ei){ //base case
+        if(si==ei){ 
             return nums[si];
         }
         int mid = si + (ei-si)/2;
