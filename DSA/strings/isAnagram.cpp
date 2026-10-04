@@ -5,8 +5,7 @@ using namespace std;
 bool isAnagram(string str1,string str2){
     if(str1.length()!= str2.length()){
         cout<<"Not a valid anagram\n";
-        return false;
-        
+        return false; 
     }
     int count[26] = {0};
     for(int i=0;i<str1.length();i++){
@@ -22,7 +21,6 @@ bool isAnagram(string str1,string str2){
     }
     cout<<"Its valid anagram\n";
     return true;
-    
 }
 
 int main(){

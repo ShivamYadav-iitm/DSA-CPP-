@@ -13,7 +13,6 @@ bool ispalindrome(char word[],int n){
         end--;
     }
     return true;
-    
 }
 
 int main(){
