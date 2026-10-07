@@ -7,11 +7,9 @@ class Solution {
 public:
     bool isValid(string s) {
         stack<char> stc;
-        
         if (s.size() % 2 != 0) {
             return false;
         }
-        
         for (int i = 0; i < s.size(); i++) {
             if (s[i] == '(' || s[i] == '[' || s[i] == '{') {
                 stc.push(s[i]);
