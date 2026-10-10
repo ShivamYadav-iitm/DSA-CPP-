@@ -16,13 +16,10 @@ public:
             } else {
                 int inner_score = stc.top();
                 stc.pop();
-                
                 int current_score = max(2 * inner_score, 1);
-                
                 stc.top() += current_score;
             }
         }
-        
         return stc.top();
     }
 };
