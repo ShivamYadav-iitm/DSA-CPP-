@@ -13,7 +13,6 @@ class SegmentTree {
         char suff_char;
         int size;
     };
-
     vector<Node> tree;
     string& s;
 
@@ -22,7 +21,6 @@ class SegmentTree {
         res.size = left.size + right.size;
         res.pref_char = left.pref_char;
         res.suff_char = right.suff_char;
-
 
         res.pref_len = left.pref_len;
         if (left.pref_len == left.size && left.pref_char == right.pref_char) {
@@ -38,10 +36,8 @@ class SegmentTree {
         if (left.suff_char == right.pref_char) {
             res.max_len = max(res.max_len, left.suff_len + right.pref_len);
         }
-
         return res;
     }
-
     void build(int node, int start, int end) {
         if (start == end) {
             tree[node] = {1, 1, 1, s[start], s[start], 1};
@@ -52,7 +48,6 @@ class SegmentTree {
         build(2 * node + 1, mid + 1, end);
         tree[node] = merge(tree[2 * node], tree[2 * node + 1]);
     }
-
 public:
     SegmentTree(string& str) : s(str) {
         int n = s.length();
@@ -61,7 +56,6 @@ public:
             build(1, 0, n - 1);
         }
     }
-
     void update(int node, int start, int end, int idx, char c) {
         if (start == end) {
             tree[node] = {1, 1, 1, c, c, 1};
@@ -75,7 +69,6 @@ public:
         }
         tree[node] = merge(tree[2 * node], tree[2 * node + 1]);
     }
-
     int query() {
         return tree[1].max_len;
     }
