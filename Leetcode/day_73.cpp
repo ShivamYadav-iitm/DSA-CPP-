@@ -14,10 +14,8 @@ public:
                 }
             }
         }
-        
         long long totalSum = 0;
         long long MOD = 1e9 + 7;
-        
         for (int i = 0; i < k; i++) {
             long long currentNum = 0;
             
@@ -27,11 +25,9 @@ public:
                     bitCount[b]--; 
                 }
             }
-            
             long long square = (currentNum * currentNum) % MOD;
             totalSum = (totalSum + square) % MOD;
         }
-        
         return totalSum;
     }
 };
