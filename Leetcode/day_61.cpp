@@ -12,15 +12,11 @@ public:
         if ((m + n - 1) % 2 != 0) {
             return false;
         }
-        
         if (grid[0][0] == ')' || grid[m-1][n-1] == '(') {
             return false;
         }
-        
         int max_balance = (m + n) / 2;
-      
         vector<vector<vector<int>>> memo(m, vector<vector<int>>(n, vector<int>(max_balance + 1, -1)));
-        
         return dfs(grid, 0, 0, 0, memo);
     }
     
