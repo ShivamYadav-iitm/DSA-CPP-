@@ -65,12 +65,10 @@ public:
             
             update(1, 0, n - 1, prev + 1, j, 1);
             
-            
             total_sum = (total_sum + tree[1].sum_sq) % MOD;
             
             last_pos[nums[j]] = j;
         }
-
         return total_sum;
     }
 };
