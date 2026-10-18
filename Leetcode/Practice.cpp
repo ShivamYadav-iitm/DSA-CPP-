@@ -25,7 +25,6 @@ Node * Build(vector<int> nodes){  //O{n}
     Node*currNode = new Node(nodes[idx]);
     currNode->left = Build(nodes);
     currNode->right = Build(nodes);
-
     return currNode;
 }
 
@@ -38,14 +37,12 @@ public:
         if(root==NULL){
             return true;
         }
-
         if(root->left != NULL){
             currleft = root->left->data == root->data;
         }
         if(root->right != NULL){
             curright = root->right->data == root->data;
         }
-
         bool left =  helper(root->left);
         bool right = helper(root->right);
 
@@ -53,7 +50,6 @@ public:
         return curr;
 
     }
-    
     bool isUnivalTree(Node* root) {
         return helper(root);
     }
