@@ -18,7 +18,6 @@ public:
                 if(st.empty()){
                     return false;
                 }
-
                 char top = st.top();
                 if(c == '}' && top == '{' ||c == ']' && top == '['||c == ')' && top == '(' ){
                     st.pop();
