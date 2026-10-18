@@ -7,10 +7,8 @@ class Solution {
 public:
     int longestValidParentheses(string s) {
         stack<int> stc;
-       
         stc.push(-1); 
         int max_len = 0;
-        
         for (int i = 0; i < s.length(); i++) {
             if (s[i] == '(') {
                
@@ -28,7 +26,6 @@ public:
                 }
             }
         }
-        
         return max_len;
     }
 };
