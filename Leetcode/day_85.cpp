@@ -7,7 +7,6 @@ using namespace std;
 class Solution {
 private:
     const vector<int> daysPerMonth = {31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31};
-
     int dateToDayOfYear(const string& date) {
         int month = stoi(date.substr(0, 2));
         int day = stoi(date.substr(3, 2));
@@ -19,7 +18,6 @@ private:
 
         return dayOfYear;
     }
-
 public:
     int countDaysTogether(string arriveAlice, string leaveAlice, string arriveBob, string leaveBob) {
         int startA = dateToDayOfYear(arriveAlice);
