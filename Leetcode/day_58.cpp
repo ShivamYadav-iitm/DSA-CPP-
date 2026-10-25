@@ -11,11 +11,9 @@ public:
         for (const auto& pair : knowledge) {
             map[pair[0]] = pair[1];
         }
-
         string result = "";
         string currentKey = "";
         bool insideBracket = false;
-
         for (char c : s) {
             if (c == '(') {
                 insideBracket = true;
@@ -37,7 +35,6 @@ public:
                 }
             }
         }
-
         return result;
     }
 };
