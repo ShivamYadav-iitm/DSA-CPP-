@@ -10,7 +10,7 @@ private:
         }
 
         long long currentVal = grid[r][c];
-        grid[r][c] = 0; // Mark as visited
+        grid[r][c] = 0; 
 
         currentVal += dfs(r + 1, c, rows, cols, grid);
         currentVal += dfs(r - 1, c, rows, cols, grid);
