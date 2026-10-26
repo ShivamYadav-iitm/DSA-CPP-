@@ -23,11 +23,9 @@ public:
             return sz > other.sz; 
         }
     };
-
     struct Interval {
         int start, end, weight, id;
     };
-
     vector<int> maximumWeight(vector<vector<int>>& intervals) {
         int n = intervals.size();
         vector<Interval> arr(n);
@@ -41,7 +39,6 @@ public:
         });
 
         vector<vector<Result>> dp(n + 1, vector<Result>(5));
-
         for (int i = n - 1; i >= 0; --i) {
             
             int low = i + 1, high = n - 1, next_idx = n;
@@ -54,7 +51,6 @@ public:
                     low = mid + 1;
                 }
             }
-
             for (int k = 1; k <= 4; ++k) {
                
                 Result skip = dp[i + 1][k];
@@ -69,7 +65,6 @@ public:
                 dp[i][k] = max(skip, take);
             }
         }
-
         return vector<int>(dp[0][4].ids.begin(), dp[0][4].ids.begin() + dp[0][4].sz);
     }
 };
