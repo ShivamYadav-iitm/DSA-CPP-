@@ -14,11 +14,7 @@ public:
                 break; 
             }
         }
-        
-        
         unordered_set<int> num_set(nums.begin(), nums.end());
-        
-        
         int x = prefix_sum;
         while (num_set.count(x)) {
             x++;
