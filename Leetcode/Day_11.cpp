@@ -19,7 +19,6 @@ public:
         while (num_set.count(x)) {
             x++;
         }
-        
         return x;
     }
 };
