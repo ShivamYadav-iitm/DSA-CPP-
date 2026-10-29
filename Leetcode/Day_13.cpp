@@ -15,23 +15,19 @@ class SegmentTree {
     };
     vector<Node> tree;
     string& s;
-
     Node merge(const Node& left, const Node& right) {
         Node res;
         res.size = left.size + right.size;
         res.pref_char = left.pref_char;
         res.suff_char = right.suff_char;
-
         res.pref_len = left.pref_len;
         if (left.pref_len == left.size && left.pref_char == right.pref_char) {
             res.pref_len += right.pref_len;
         }
-
         res.suff_len = right.suff_len;
         if (right.suff_len == right.size && right.suff_char == left.suff_char) {
             res.suff_len += left.suff_len;
         }
-
         res.max_len = max(left.max_len, right.max_len);
         if (left.suff_char == right.pref_char) {
             res.max_len = max(res.max_len, left.suff_len + right.pref_len);
@@ -73,7 +69,6 @@ public:
         return tree[1].max_len;
     }
 };
-
 class Solution {
 public:
     vector<int> longestRepeating(string s, string queryCharacters, vector<int>& queryIndices) {
@@ -88,7 +83,6 @@ public:
             st.update(1, 0, n - 1, queryIndices[i], queryCharacters[i]);
             ans.push_back(st.query());
         }
-        
         return ans;
     }
 };
