@@ -39,10 +39,7 @@ public:
                         dp[i + 1][j][1] =
                             (dp[i + 1][j][1] + ways) % MOD;
                     }
-
                 } else {
-
-                  
                     if (i + 1 < m) {
                         dp[i + 1][j][1] =
                             (dp[i + 1][j][1] + right) % MOD;
