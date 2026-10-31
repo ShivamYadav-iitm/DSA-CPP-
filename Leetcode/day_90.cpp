@@ -47,10 +47,8 @@ private:
                 dfs(v, u, d + 1);
             }
         }
-
         out[u] = timer;
     }
-
     int getLCA(int u, int v) {
         if (depth[u] < depth[v]) swap(u, v);
 
