@@ -24,11 +24,7 @@ public:
                 int down = dp[i][j][1];
 
                 if (grid[i][j] == 0) {
-
-                    
                     int ways = (right + down) % MOD;
-
-                  
                     if (j + 1 < n) {
                         dp[i][j + 1][0] =
                             (dp[i][j + 1][0] + ways) % MOD;
