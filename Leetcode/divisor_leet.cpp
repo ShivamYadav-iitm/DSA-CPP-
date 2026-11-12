@@ -8,9 +8,7 @@ public:
         if (dividend == INT_MIN && divisor == -1) {
             return INT_MAX;
         }
-
         bool isNegative = (dividend < 0) ^ (divisor < 0);
-
         long long absDividend = std::abs((long long)dividend);
         long long absDivisor = std::abs((long long)divisor);
 
