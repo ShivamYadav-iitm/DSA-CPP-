@@ -4,10 +4,8 @@
 #include <queue>
 #include <tuple>
 #include <functional>
-
 using namespace std;
-
-
+    
 class Solution {
 public:
     int shortestPath(int n, vector<vector<int>>& edges, string labels, int k) {
