@@ -48,11 +48,9 @@ public:
                 }
             }
         }
-
         auto getCost = [&](int l, int r) -> long long {
             long long cost = 0;
             int cur = l;
-
             for (int j = LOG - 1; j >= 0; j--) {
                 int nxt = up[j][cur];
 
@@ -61,7 +59,6 @@ public:
                     cur = nxt;
                 }
             }
-
             cost += 1LL * (r - cur) * nums[cur]
                     - (pref[r + 1] - pref[cur + 1]);
 
