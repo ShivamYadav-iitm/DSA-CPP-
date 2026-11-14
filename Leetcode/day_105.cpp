@@ -64,12 +64,10 @@ public:
 
             return cost;
         };
-
         long long ans = 0;
 
         for (int r = 0; r < n; r++) {
             int low = 0, high = r;
-
             while (low < high) {
                 int mid = low + (high - low) / 2;
 
