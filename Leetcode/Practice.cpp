@@ -14,9 +14,7 @@ public:
         left = right = NULL;
     }
 };
-
 static int idx = -1;
-
 Node * Build(vector<int> nodes){  //O{n}
     idx++;
     if(nodes[idx]==-1){
@@ -27,8 +25,6 @@ Node * Build(vector<int> nodes){  //O{n}
     currNode->right = Build(nodes);
     return currNode;
 }
-
-
 class Solution {
 public:
     bool helper(Node * root){
