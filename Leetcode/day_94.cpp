@@ -10,12 +10,10 @@ public:
         sort(nums.begin(), nums.end());
         int n = nums.size();
         int median = nums[n / 2]; 
-        
         int total_moves = 0;
         for (int num : nums) {
             total_moves += abs(num - median);
         }
-        
         return total_moves;
     }
 };
