@@ -11,9 +11,7 @@ public:
         bool isNegative = (dividend < 0) ^ (divisor < 0);
         long long absDividend = std::abs((long long)dividend);
         long long absDivisor = std::abs((long long)divisor);
-
         long long quotient = 0;
-
         while (absDividend >= absDivisor) {
             long long tempDivisor = absDivisor;
             long long multiple = 1;
@@ -26,7 +24,6 @@ public:
             absDividend -= tempDivisor;
             quotient += multiple;
         }
-
         if (isNegative) {
             return -quotient;
         }
