@@ -20,7 +20,6 @@ public:
             }
             dp[i] = max_diff;
         }
-        
         if (dp[0] > 0) {
             return "Alice";
         } else if (dp[0] < 0) {
