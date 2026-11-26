@@ -15,12 +15,10 @@ public:
         while (absDividend >= absDivisor) {
             long long tempDivisor = absDivisor;
             long long multiple = 1;
-
             while (absDividend >= (tempDivisor + tempDivisor)) {
                 tempDivisor += tempDivisor; 
                 multiple += multiple;     
             }
-
             absDividend -= tempDivisor;
             quotient += multiple;
         }
