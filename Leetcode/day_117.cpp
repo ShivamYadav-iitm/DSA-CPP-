@@ -14,11 +14,9 @@ public:
         const uint64_t BASE1 = 911382323ULL;
         const uint64_t BASE2 = 972663749ULL;
         const uint64_t OFFSET = 1000000005ULL;
-
         auto hasUnique = [&](int len) -> bool {
             uint64_t h1 = 0, h2 = 0;
             uint64_t p1 = 1, p2 = 1;
-
             for (int i = 0; i < len; ++i) {
                 uint64_t val = static_cast<uint64_t>(nums[i]) + OFFSET;
                 h1 = (h1 * BASE1 + val) % MOD1;
