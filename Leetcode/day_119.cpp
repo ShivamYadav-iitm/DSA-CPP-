@@ -27,7 +27,6 @@ public:
             if (cost > budget) {
                 continue;
             }
-
             long long extraCopies = (budget - cost) / minPrice;
             int freeCopies = 0;
 
@@ -40,7 +39,6 @@ public:
                     }
                 }
             }
-
             int totalItems = static_cast<int>(boughtTypes + extraCopies + freeCopies);
             ans = max(ans, totalItems);
         }
